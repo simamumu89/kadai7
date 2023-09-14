@@ -19,7 +19,7 @@ public class PatientController {
     }
 
     @PostMapping("/patient")
-    public Response createinfromation(){
+    public Response create(){
         return new Response("created a new infromation")
     }
 }
