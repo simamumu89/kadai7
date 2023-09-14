@@ -1,13 +1,13 @@
 package Patient.information;
 
-public class infromationResponse {
+public class InfromationResponse {
     private int id;
     private String name;
     private int age;
     private String Country;
     private String profession;
 
-    public infromationResponse(int id, String name, int age, String Country, String profession) {
+    public InfromationResponse(int id, String name, int age, String Country, String profession) {
         this.id = id;
         this.name = name;
         this.age = age;
