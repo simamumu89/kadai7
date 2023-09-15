@@ -1,9 +1,16 @@
 package Patient.information;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import Patient.information.request.InformationCreateRequest;
+import Patient.information.request.InformationUpdateRequest;
+import Patient.information.response.InformationDeleteRequest;
+import Patient.information.response.InformationResponse;
+import Patient.information.response.InformationUpdateResponse;
+import Patient.information.response.Response;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -19,7 +26,21 @@ public class PatientController {
     }
 
     @PostMapping("/patient")
-    public Response createName(){
-        return new Response("created a new infromation");
+    public ResponseEntity<Response> createName(@RequestBody InformationCreateRequest informationCreateRequest, UriComponentsBuilder uriComponentsBuilder){
+        //登録処理を呼び出す
+
+        URI uri = uriComponentsBuilder.path("/patient/{id}").buildAndExpand(7).toUri();
+        return ResponseEntity.created(uri).body(new Response("a new name created!"));
+    }
+
+    @PatchMapping("/patient/{id}")
+    public InformationUpdateResponse updateName(@PathVariable int id, @RequestBody InformationUpdateRequest informationUpdateRequest){
+        //更新処理を呼び出す
+        return new InformationUpdateResponse("a name is updated!");
+    }
+    @DeleteMapping("/patient/{id}")
+    public InformationUpdateResponse deleteName(@PathVariable int id, @RequestBody InformationDeleteRequest informationDeleteRequestRequest){
+        //更新データの削除処理
+        return new InformationUpdateResponse("Update removed!");
     }
 }

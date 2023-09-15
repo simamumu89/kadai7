@@ -1,4 +1,4 @@
-package Patient.information;
+package Patient.information.response;
 
 public class InformationResponse {
     private int id;
