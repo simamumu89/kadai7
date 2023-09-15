@@ -1,17 +1,17 @@
 package Patient.information;
 
-public class infromationResponse {
+public class InformationResponse {
     private int id;
     private String name;
     private int age;
-    private String Country;
+    private String gender;
     private String profession;
 
-    public infromationResponse(int id, String name, int age, String Country, String profession) {
+    public InformationResponse(int id, String name, int age, String gender, String profession) {
         this.id = id;
         this.name = name;
         this.age = age;
-        this.Country = Country;
+        this.gender = gender;
         this.profession = profession;
     }
 
@@ -27,8 +27,8 @@ public class infromationResponse {
         return age;
     }
 
-    public String getSex() {
-        return Country;
+    public String getGender() {
+        return gender;
     }
 
     public String getProfession() {
