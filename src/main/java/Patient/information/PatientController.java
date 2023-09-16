@@ -2,7 +2,7 @@ package Patient.information;
 
 import Patient.information.request.InformationCreateRequest;
 import Patient.information.request.InformationUpdateRequest;
-import Patient.information.response.InformationDeleteRequest;
+import Patient.information.response.InformationDeleteResquest;
 import Patient.information.response.InformationResponse;
 import Patient.information.response.InformationUpdateResponse;
 import Patient.information.response.Response;
@@ -26,7 +26,7 @@ public class PatientController {
     }
 
     @PostMapping("/patient")
-    public ResponseEntity<Response> createName(@RequestBody InformationCreateRequest informationCreateRequest, UriComponentsBuilder uriComponentsBuilder){
+    public ResponseEntity<Response> createpatient(@RequestBody InformationCreateRequest informationCreateRequest, UriComponentsBuilder uriComponentsBuilder){
         //登録処理を呼び出す
 
         URI uri = uriComponentsBuilder.path("/patient/{id}").buildAndExpand(7).toUri();
@@ -34,13 +34,13 @@ public class PatientController {
     }
 
     @PatchMapping("/patient/{id}")
-    public InformationUpdateResponse updateName(@PathVariable int id, @RequestBody InformationUpdateRequest informationUpdateRequest){
+    public InformationUpdateResponse updatepatient(@PathVariable int id, @RequestBody InformationUpdateRequest informationUpdateRequest){
         //更新処理を呼び出す
         return new InformationUpdateResponse("a name is updated!");
     }
     @DeleteMapping("/patient/{id}")
-    public InformationUpdateResponse deleteName(@PathVariable int id, @RequestBody InformationDeleteRequest informationDeleteRequestRequest){
+    public InformationDeleteResquest deletepatient(@PathVariable int id){
         //更新データの削除処理
-        return new InformationUpdateResponse("Update removed!");
+        return new InformationDeleteResquest("a name is removed!");
     }
 }
