@@ -2,19 +2,13 @@ package Patient.information.response;
 
 public class InformationDeleteRequest {
 
-    private String address;
-    private String insurancecard;
+    private String message;
 
-    public InformationDeleteRequest(String address, String insurancecard) {
-        this.address = address;
-        this.insurancecard = insurancecard;
+    public InformationDeleteRequest(String message) {
+        this.message = message;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public String getInsurancecard() {
-        return insurancecard;
+    public String getMessage() {
+        return message;
     }
 }
