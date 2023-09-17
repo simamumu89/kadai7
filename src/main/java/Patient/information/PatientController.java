@@ -2,7 +2,7 @@ package Patient.information;
 
 import Patient.information.request.InformationCreateRequest;
 import Patient.information.request.InformationUpdateRequest;
-import Patient.information.response.InformationDeleteResquest;
+import Patient.information.response.InformationDeleteRequest;
 import Patient.information.response.InformationResponse;
 import Patient.information.response.InformationUpdateResponse;
 import Patient.information.response.Response;
@@ -39,8 +39,8 @@ public class PatientController {
         return new InformationUpdateResponse("a name is updated!");
     }
     @DeleteMapping("/patient/{id}")
-    public InformationDeleteResquest deletepatient(@PathVariable int id){
+    public InformationDeleteRequest deletepatient(@PathVariable int id){
         //更新データの削除処理
-        return new InformationDeleteResquest("a name is removed!");
+        return new InformationDeleteRequest("a name is removed!");
     }
 }

@@ -1,10 +1,10 @@
 package Patient.information.response;
 
-public class InformationDeleteResquest {
+public class InformationDeleteRequest {
 
     private String message;
 
-    public InformationDeleteResquest(String message) {
+    public InformationDeleteRequest(String message) {
         this.message = message;
     }
 
