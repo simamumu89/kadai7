@@ -17,7 +17,7 @@ import java.util.List;
 public class PatientController {
 
     @GetMapping("/patient")
-    public List<InformationResponse> getpatient(){
+    public List<InformationResponse> getPatient(){
         List<InformationResponse> patient = List.of(
                 new InformationResponse(1, "simamura", 31, "男性", "デスクワーク"),
                 new InformationResponse(2, "tamaki", 25, "女性", "看護師"),
@@ -26,7 +26,7 @@ public class PatientController {
     }
 
     @PostMapping("/patient")
-    public ResponseEntity<Response> createpatient(@RequestBody InformationCreateRequest informationCreateRequest, UriComponentsBuilder uriComponentsBuilder){
+    public ResponseEntity<Response> createPatient(@RequestBody InformationCreateRequest informationCreateRequest, UriComponentsBuilder uriComponentsBuilder){
         //登録処理を呼び出す
 
         URI uri = uriComponentsBuilder.path("/patient/{id}").buildAndExpand(7).toUri();
@@ -34,12 +34,12 @@ public class PatientController {
     }
 
     @PatchMapping("/patient/{id}")
-    public InformationUpdateResponse updatepatient(@PathVariable int id, @RequestBody InformationUpdateRequest informationUpdateRequest){
+    public InformationUpdateResponse updatePatient(@PathVariable int id, @RequestBody InformationUpdateRequest informationUpdateRequest){
         //更新処理を呼び出す
         return new InformationUpdateResponse("a name is updated!");
     }
     @DeleteMapping("/patient/{id}")
-    public InformationDeleteRequest deletepatient(@PathVariable int id){
+    public InformationDeleteRequest deletePatient(@PathVariable int id){
         //更新データの削除処理
         return new InformationDeleteRequest("a name is removed!");
     }
